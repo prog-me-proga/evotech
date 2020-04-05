@@ -1,0 +1,26 @@
+@mixin  wh($maxW: max-, $minH: min-, $w: 100%, $h: 100vh) {
+    #{$maxW}width: $w;
+    #{$minH}height: $h;
+}
+@mixin media($mw: 1200px) {
+    @media screen and (max-width: $mw) {  
+        @content;
+    }
+}   
+@mixin Dflex($d: flex) { 
+    display: $d;
+}
+@mixin Jcontent($jc: space-between) {
+    justify-content: $jc;
+}
+@mixin AlignItem($ai: center, $jc: center) {
+    @include Jcontent($jc);
+    align-items: $ai;
+}
+@mixin flexDir($fd: column) {
+    @include Dflex();
+    flex-direction: $fd;
+}
+
+
+

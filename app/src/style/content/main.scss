@@ -1,0 +1,169 @@
+
+// svg
+  .svg{
+        width:500px;
+        height:500px;
+        transform:translate(-50%, -50%);
+        }
+.draw{
+        stroke: var(--txt-color);
+        stroke-width:1px;
+        stroke-dasharray: 700;
+        stroke-dashoffset: 710;
+        fill:transparent;
+        animation: dash 6s alternate infinite;
+    }
+@keyframes dash {
+        to {
+               stroke-dashoffset: 0;
+             }
+}
+main {
+	position: relative;
+	width: 100%;
+}
+
+.div--tilt{
+	@media (max-width:768px){
+		z-index: 0;
+	}
+}
+/* Top Navigation Style */
+.content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+
+  @media (min-width: 55em) {	
+		margin: 0 auto;
+		min-height: 100vh;
+  }
+}
+// logo
+.content__logo{
+	width: 5em;
+	position: fixed;
+	animation: animate_logo 4s infinite;
+	transform: rotateX(180deg);
+	transform-style: preserve-3d;
+}
+@keyframes animate_logo{
+	50%{
+		transform: none;
+	}
+}
+.content--fixed {
+	position: relative;
+	z-index: 1000;
+	display: block;
+	padding: 0.85em;
+
+	
+		.social__block{
+			position: absolute;
+			bottom: 2%;
+			right: 2%;
+			display: flex;
+			flex-direction: column;
+
+			@media (max-width:768px){
+				top: 5%;
+				flex-direction: row;
+			}
+
+			&-txt{
+				text-decoration: line-through;
+				transition: 0.5s;
+				color: var(--txt-color);
+        		margin-bottom: 0.8em;
+				font-weight: 600;
+				
+				@media(max-width: 768px){
+					margin-left: 1em;
+				}
+       
+			}
+
+			&-txt:hover{
+				color: black;
+				text-decoration: underline;
+			}
+    }
+    
+    @media (min-width: 55em) {
+      position: fixed;
+		  z-index: 10;
+	  	top: 0;
+		  left: 0;
+		  display: grid;
+		  align-content: space-between;
+		  width: 100%;
+		  max-width: none;
+	  	min-height: 0;
+		  height: 100vh;
+		  padding: 1.5em;
+		  pointer-events: none;
+		  grid-template-columns: 70% 30%;
+		  grid-template-rows: auto auto 4em;
+		  grid-template-areas: 'header ...'
+		  '... ...'
+		  'menu demos';
+    }
+}
+// menu btn
+.menu-trigger {
+  display: none;
+
+  @media (min-width: 55em){
+    display: inline-block;
+		background: none;
+		border: 0;
+		grid-area: menu;
+		justify-self: start;
+		align-self: end;
+		cursor: pointer;
+		pointer-events: auto;
+    font-family: inherit;
+    font-size: 1.1em;
+		color: inherit;
+		position: relative;
+		padding: 0;
+		color: var(--txt-color);
+		white-space: nowrap;
+  }
+}
+// content 1
+.content--switch {
+  background-size: cover;
+  padding: 2.5rem 1rem;
+}
+
+.content--switch::after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	bottom: 0;
+}
+// other contents
+.content__title {
+	font-family: 'Playfair Display', serif;
+	text-align: center;
+	font-size: 8vw;
+	margin: 0;
+	position: relative;
+	font-weight: normal;
+}
+
+.content__subtitle {
+	font-size: 1.45rem;
+	padding: 1rem 0;
+	letter-spacing: 2px;
+	text-indent: 2px;
+}
+// grim
+.grim {
+	display: none;
+}
